@@ -5,8 +5,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Hello</h1>
-        <TodoListFormat></TodoListFormat>
+        <TodoListFormat>할일</TodoListFormat>
       </div>
     );
   }

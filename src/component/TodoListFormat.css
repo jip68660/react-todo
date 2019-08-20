@@ -1,0 +1,27 @@
+.todo-list-format{
+    background-color: white;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+.title{
+    font-size: 3vw;
+    text-align: center;
+    background-color: #7FFFD4;
+    color: white;
+    padding: 2rem;
+    border-bottom: 1px solid #22b8cf;
+}
+
+.format-wrapper{
+    font-size: 1.5vw;
+    background-color: #F0FFFF;    
+    padding: 1rem;
+}
+
+.list-wrapper{
+    font-size: 1.5vw;
+    background-color: #F0FFFF;
+    padding: 1rem;
+    border-bottom: 1px solid #22b8cf;
+}
