@@ -1,3 +1,10 @@
+React tutorial using "https://velopert.com/3480"
+
+Learn/copy/implement/change from the code in "https://velopert.com/3480"
+
+Special thanks to "Velopert"
+----------------------------------------------------------------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
