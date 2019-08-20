@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { Component }from 'react';
+import TodoListFormat from "./component/TodoListFormat";
 
-function App() {
-  return (
-    <h1>header1</h1>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello</h1>
+        <TodoListFormat></TodoListFormat>
+      </div>
+    );
+  }
 }
 
 export default App;
