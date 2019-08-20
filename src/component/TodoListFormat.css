@@ -15,13 +15,13 @@
 
 .format-wrapper{
     font-size: 1.5vw;
-    background-color: #F0FFFF;    
+    background-color: white;    
     padding: 1rem;
 }
 
 .list-wrapper{
     font-size: 1.5vw;
-    background-color: #F0FFFF;
+    background-color: white;
     padding: 1rem;
     border-bottom: 1px solid #22b8cf;
 }

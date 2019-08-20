@@ -1,0 +1,20 @@
+.input-format {
+    display: flex;    
+}
+.input-format input {
+    flex: 1;
+    font-size: 1.5vw;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    border-bottom: 1px solid #22b8cf;
+}
+.add-button {
+    padding: 1rem;
+    color: #22b8cf;
+    font-weight: 600;
+    cursor: pointer;
+}
+.add-button:hover {
+    transform:scale(1.2);
+}
