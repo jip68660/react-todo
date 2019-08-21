@@ -1,4 +1,4 @@
-React tutorial using "https://velopert.com/3480"
+React tutorial based on "https://velopert.com/3480"
 
 Learn/copy/implement/change from the code in "https://velopert.com/3480"
 

@@ -10,6 +10,10 @@ class TodoItem extends Component {
                 <div className={"todo ${status ? 'checked' : ''}"}>
                     <div>{input}</div>
                 </div>
+                <div className="remove-button" onClick= {(e) => {
+                    e.stopPropagation();
+                    onRemove(id)}
+                }>}></div>
             </div>
         );
     }
