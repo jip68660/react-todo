@@ -5,12 +5,10 @@
     transition: all 0.15s;
     user-select: none;  /*prevent text selection*/
     padding: 1rem;
+    font-size: 1.5vw;
 }
 .todo-item:hover {
     background-color: rgb(243, 243, 243);
-}
-.todo-item:hover .inputText {
-    transform: sacel(1.2);
 }
 .todo-item:hover .remove-button {
     opacity: 1;
@@ -30,6 +28,8 @@
 .checked {
     text-decoration: line-through;
     color: rgb(94, 94, 94);
+    font-size: 1.4vw;
+
 }
 .check-mark {
     font-weight: 600;
