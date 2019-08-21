@@ -12,6 +12,25 @@ class App extends Component {
     input: "",
     todo: []
   }
+  /*****trying to display if past todo-list exists, using handleCreate or sometingelse*******/
+  // componentDidMount() {
+  //   const { input, todo } = this.state;
+  //   if (localStorage.length != 0) {
+  //     for (let i = 0; i<10; i++) {
+  //       // this.setState({
+  //       //   todo: todo.concat({
+  //       //     id: this.id++,
+  //       //     text: "hello",
+  //       //     status: false
+  //       //   })
+  //       // });(
+  //       var event1 = new CustomEvent("build", {detail: {target: "Hello" + i}});
+  //       this.handleCreate(event1);
+  //       console.log(event1);
+  //     }
+  //   }
+  // }
+
   //any change on target's value will save in input
   //for example, if user puts "hello", input's value will be "hello"
   handleChange = (e) => {
@@ -34,8 +53,8 @@ class App extends Component {
       })
     });
     //save in the localStorage
-    //try to use 'status' but not working, so just use true/false 
-    localStorage.setItem(this.id - 1, false);
+    //try to use 'status' but not working, so just use true/false
+    localStorage.setItem(this.id - 1, JSON.stringify([input, false]));
   }
   //if user press "Enter" key, do same handleCreate(e) process
   handleKeyPress = (e) => {
