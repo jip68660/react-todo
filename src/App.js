@@ -22,7 +22,7 @@ class App extends Component {
   //process of adding user's input to todo[] list
   //input will became "" after create; no longer need need to hold
   handleCreate = (e) => {
-    const {input, todo} = this.state;
+    const { input, todo } = this.state;
     this.setState({
       input: "",
       //.concat() will add following informations to todo[] 
@@ -33,6 +33,9 @@ class App extends Component {
         status: false
       })
     });
+    //save in the localStorage
+    //try to use 'status' but not working, so just use true/false 
+    localStorage.setItem(this.id - 1, false);
   }
   //if user press "Enter" key, do same handleCreate(e) process
   handleKeyPress = (e) => {
