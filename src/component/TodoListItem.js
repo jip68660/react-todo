@@ -4,11 +4,22 @@ import TodoItem from "./TodoItem";
 class TodoListItem extends Component {
     render() {
         const { todo, onToggle, onRemove } = this.props;
+        
+        const todoList = todo.map(
+            ({id, text, status}) => (
+                <TodoItem
+                    id={id}
+                    text={text}
+                    status={status}
+                    onToggle={onToggle}
+                    onRemove={onRemove}
+                    key={id} />
+            )
+        );
+        
         return(
             <div>
-                <TodoItem text="garbage"/>
-                <TodoItem text="garbage"/>
-                <TodoItem text="garbage"/>
+                {todoList}
             </div>
         );
     }
