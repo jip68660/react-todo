@@ -1,0 +1,36 @@
+.todo-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;  /*prevent text selection*/
+    padding: 1rem;
+}
+.todo-item:hover {
+    background-color: rgb(243, 243, 243);
+}
+.todo-item:hover .inputText {
+    transform: sacel(1.2);
+}
+.todo-item:hover .remove-button {
+    opacity: 1;
+}
+.remove-button {
+    opacity: 0;
+    font-weight: 600;
+    cursor: pointer;
+}
+.remove-button:hover {
+    transform: scale(1.2);
+}
+.todo {
+    flex: 1;
+    word-break: break-all;
+}
+.checked {
+    text-decoration: line-through;
+    color: rgb(94, 94, 94);
+}
+.check-mark {
+    font-weight: 600;
+}
