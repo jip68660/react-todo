@@ -17,7 +17,7 @@ class TodoListItem extends Component {
                     key={id} />
             )
         );
-        
+
         return(
             <div>
                 {todoList}
