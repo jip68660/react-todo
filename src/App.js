@@ -12,21 +12,30 @@ class App extends Component {
     input: "",
     todo: []
   }
+
   /*****trying to display if past todo-list exists, using handleCreate or sometingelse*******/
-  // componentDidMount() {
+  // componentDidMount = () => {
   //   const { input, todo } = this.state;
-  //   if (localStorage.length != 0) {
+  //   if (localStorage.length !== 0) {
   //     for (let i = 0; i<10; i++) {
   //       // this.setState({
   //       //   todo: todo.concat({
   //       //     id: this.id++,
-  //       //     text: "hello",
+  //       //     text: "hello" + i,
+  //       //     // text: localStorage.getItem(i),
   //       //     status: false
   //       //   })
-  //       // });(
-  //       var event1 = new CustomEvent("build", {detail: {target: "Hello" + i}});
-  //       this.handleCreate(event1);
-  //       console.log(event1);
+  //       // });
+  //       this.handleCreate2("hello" + i);
+  //       console.log(todo);
+  //       // var event = new CustomEvent("build", {target: {value: "hello" + i}});
+  //       // var event2 = new Event("event2", {target: {writable: true}});
+  //       // const temp = (<input value="Hello" />);
+  //       // event2.target = temp;
+  //       // console.log(event2.target);
+        
+  //       // this.handleCreate(event);
+  //       // console.log(event);
   //     }
   //   }
   // }
@@ -56,6 +65,24 @@ class App extends Component {
     //try to use 'status' but not working, so just use true/false
     localStorage.setItem(this.id - 1, JSON.stringify([input, false]));
   }
+  // handleCreate2 = (text2) => {
+  //   console.log(text2);
+  //   const { input, todo } = this.state;
+  //   this.setState({
+  //     input: "",
+  //     //.concat() will add following informations to todo[] 
+  //     todo: todo.concat({
+  //       id: this.id++,
+  //       text: text2,
+  //       //default status is false; which no check-mark -> not done
+  //       status: false
+  //     })
+  //   });
+  //   //save in the localStorage
+  //   //try to use 'status' but not working, so just use true/false
+  //   localStorage.setItem(this.id - 1, JSON.stringify([input, false]));
+  // }
+
   //if user press "Enter" key, do same handleCreate(e) process
   handleKeyPress = (e) => {
     if (e.key === "Enter") {

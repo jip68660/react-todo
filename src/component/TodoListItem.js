@@ -4,6 +4,7 @@ import TodoItem from "./TodoItem";
 class TodoListItem extends Component {
     render() {
         const { todo, onToggle, onRemove } = this.props;
+        console.log(todo);
         
         const todoList = todo.map(
             ({id, text, status}) => (
