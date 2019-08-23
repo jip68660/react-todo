@@ -99,8 +99,6 @@ class App extends Component {
     });
     localStorage.removeItem(id);
     console.log(todo);
-    
-    console.log(newArray);
   }
   //toggle action to show that the todo-item is finshed or not
   handleToggle = (id) => {
