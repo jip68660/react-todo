@@ -51,7 +51,8 @@ class App extends Component {
   //input will became "" after create; no longer need need to hold
   handleCreate = (e) => {
     const { input, todo } = this.state;
-    this.setState({
+    //if the (input !==""), no-input will not be accepted
+    (input !== "") && this.setState({
       input: "",
       //.concat() will add following informations to todo[] 
       todo: todo.concat({
@@ -63,7 +64,7 @@ class App extends Component {
     });
     //save in the localStorage
     //try to use 'status' but not working, so just use true/false
-    localStorage.setItem(this.id - 1, JSON.stringify([input, false]));
+    (input !== "") && localStorage.setItem(this.id - 1, JSON.stringify([input, false]));
   }
   // handleCreate2 = (text2) => {
   //   console.log(text2);
@@ -89,6 +90,38 @@ class App extends Component {
       this.handleCreate(e);
     }
   }
+  //remove certain todo-item from list
+  handleRemove = (id) => {
+    const { todo } = this.state;
+    //.filter works as delete 
+    this.setState({
+      todo: todo.filter(todo => todo.id !== id)
+    });
+    localStorage.removeItem(id);
+    console.log(todo);
+    
+    console.log(newArray);
+  }
+  //toggle action to show that the todo-item is finshed or not
+  handleToggle = (id) => {
+    const { todo } = this.state;
+    //using the id, find the index of following todo-item
+    const index = todo.findIndex(todo => todo.id === id);
+    //selected todo-item
+    const selected = todo[index];
+    //copy the todo[] 
+    const nextTodo = [...todo];
+    //change the todo-item status in a new copied array
+    nextTodo[index] = {
+      ...selected, status: !selected.status
+    };
+    //override the todo[] with changed todo-item
+    this.setState({
+      todo:nextTodo
+    });
+    //save in the localStorage with the changed information everytime it toggles
+    localStorage.setItem(id, JSON.stringify([selected.text, nextTodo[index].status]));
+  }
 
   render() {
     //declare const with the information outside of render()
@@ -96,7 +129,9 @@ class App extends Component {
     const {
       handleChange,
       handleCreate,
-      handleKeyPress
+      handleKeyPress,
+      handleToggle,
+      handleRemove
     } = this;
 
     return (
@@ -109,7 +144,7 @@ class App extends Component {
             onChange={handleChange}
             onCreate={handleCreate} />
         }>
-          <TodoListItem todo={todo}/>
+          <TodoListItem todo={todo} onToggle={handleToggle} onRemove={handleRemove}/>
         </TodoListFormat>
       </div>
     );
