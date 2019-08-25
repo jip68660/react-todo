@@ -4,10 +4,9 @@ import UserInput from "./component/UserInput";
 import TodoListItem from "./component/TodoListItem";
 
 class App extends Component {
-  //id for todo-items
+  //id for todo-items  
   id = 0;
-
-  //todo-times will save in todo[]
+  //todo-items will save in todo[]
   state = {
     input: "",
     todo: []
@@ -90,15 +89,24 @@ class App extends Component {
       this.handleCreate(e);
     }
   }
-  //remove certain todo-item from list
-  handleRemove = (id) => {
+  //original --------- remove certain todo-item from list
+  // handleRemove = (id) => {
+  //   const { todo } = this.state;
+  //   //.filter works as delete 
+  //   this.setState({
+  //     todo: todo.filter(todo => todo.id !== id)
+  //   });
+  //   localStorage.removeItem(id);
+  //   // this.decreaseIndex();
+  //   // console.log(todo);
+  // }
+  handleRemove = (id, text) => {
     const { todo } = this.state;
     //.filter works as delete 
     this.setState({
-      todo: todo.filter(todo => todo.id !== id)
+      todo: todo.filter(todo => todo.text !== text)
     });
     localStorage.removeItem(id);
-    console.log(todo);
   }
   //toggle action to show that the todo-item is finshed or not
   handleToggle = (id) => {
@@ -119,6 +127,7 @@ class App extends Component {
     });
     //save in the localStorage with the changed information everytime it toggles
     localStorage.setItem(id, JSON.stringify([selected.text, nextTodo[index].status]));
+    // console.log(todo);
   }
 
   render() {

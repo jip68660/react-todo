@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import TodoItem from "./TodoItem";
 
 class TodoListItem extends Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.todo !== nextProps.todo;
+    }
+
     render() {
         const { todo, onToggle, onRemove } = this.props;
         
@@ -16,7 +20,6 @@ class TodoListItem extends Component {
                     key={id} />
             )
         );
-
         return(
             <div>
                 {todoList}
